@@ -6,8 +6,8 @@ When an academic website is loaded (specifically, a BTHS one), a customized util
 The utility bar will have resources that help quality of life when on specific website
 # Installation
 1) The easy way
-Download the .crx file, and open it with google chrome.
-Google drive link: https://drive.google.com/open?id=1R5x-nuqVG2gn3CKFHmakT7BqW_9LOlwM
+- Download the .crx file, and open it with google chrome.
+- Google drive link: https://drive.google.com/open?id=1R5x-nuqVG2gn3CKFHmakT7BqW_9LOlwM
 2) The hard way 
 - Download the entire zip file
 - `npm install jquery`
