@@ -1,0 +1,34 @@
+/*Dependency: JQuery*/
+{
+  "name": "Diamond Toolbar",
+  "version": "1.0",
+  "description": "A bunch of tools",
+  "manifest_version": 2,
+  "content_scripts": [
+  	{
+  		"matches": ["https://www.deltamath.com/*"],
+  		"js": ["Deltamath/deltamath.js"],
+  		"css": ["Deltamath/deltamath.css"]
+  	},
+    {
+      "matches": ["*://cl.castlelearning.com/*"],
+      "js": ["Castle Learning/CastleLearning.js"],
+      "css": ["Castle Learning/CastleLearning.css"]
+    },
+    {
+    	"matches": ["*://classroom.google.com/*"],
+    	"js": ["Google Classroom/Classroom.js"],
+    	"css": ["Google Classroom/Classroom.css"]
+    },
+    {
+      "matches": ["*://quizlet.com/*"],
+      "js": ["Quizlet/quizlet.js"],
+      "css": ["Quizlet/quizlet.css"]
+    },
+    {
+    	"matches": ["*://edpuzzle.com/*"],
+    	"js": ["jquery/dist/jquery.js", "EdPuzzle/edpuzzle.js"],
+    	"css": ["EdPuzzle/edpuzzle.css"]
+    }
+  ]
+}

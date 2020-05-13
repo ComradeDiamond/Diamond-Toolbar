@@ -1,0 +1,110 @@
+.classroomSectionCSS
+{
+	position: fixed;
+	bottom: 30%;
+	left: 87%;
+	width: 13%;
+	background-color: white;
+	box-shadow: -5px 4px 5px #f2f2f2;
+	border: 2px outset #ebebeb;
+	border-radius: 10px 0px 0px 10px;
+	font: 18pt comic sans ms;
+	cursor: pointer;
+}
+.pupilpathCSS, .translateCSS, .deltaMathCSS, .castleLearningCSS, .googleMeetsCSS, .microsoftTeamsCSS, .discordCSS, .moodleCSS, .websiteCSS, .studyGuidesCSS, .collegeBoardCSS
+{
+	font: 16pt calibri light;
+	background: transparent;
+	color: black;
+	border-bottom: 2px solid #cecccf;
+	border-top: : 2px solid #cecccf;
+	padding: 3px;
+}
+.pupilpathCSS
+{
+	border-right: 30px solid #cf4de3;
+}
+.pupilpathCSS:hover
+{
+	background-color: #f29cff;
+}
+.translateCSS
+{
+	border-right: 30px solid #4f98ff;
+}
+.translateCSS:hover
+{
+	background-color: #a3c9ff;
+}
+.deltaMathCSS
+{
+	border-right: 30px solid #171717;
+}
+.deltaMathCSS:hover
+{
+	background-color: #c9c9c9;
+}
+.castleLearningCSS
+{
+	border-right: 30px solid #f56969;
+}
+.castleLearningCSS:hover
+{
+	background-color: #ffb3b3;
+}
+.googleMeetsCSS
+{
+	border-right: 30px solid #39e34d;
+}
+.googleMeetsCSS:hover
+{
+	background-color: #75ff85;
+}
+.microsoftTeamsCSS
+{
+	border-right: 30px solid #c380ff;
+}
+.microsoftTeamsCSS:hover
+{
+	background-color: #dbb3ff;
+}
+.discordCSS
+{
+	border-right: 30px solid #ffff19;
+}
+.discordCSS:hover
+{
+	background-color: #f7f78f;
+}
+.moodleCSS
+{
+	border-right: 30px solid #9dff47;
+}
+.moodleCSS:hover
+{
+	background-color: #c6ff94;
+}
+.websiteCSS
+{
+	border-right: 30px solid #46e5fa;
+}
+.websiteCSS:hover
+{
+	background-color: #a4f2fc;
+}
+.studyGuidesCSS
+{
+	border-right: 30px solid #f2be55;
+}
+.studyGuidesCSS:hover
+{
+	background-color: #ffd98c;
+}
+.collegeBoardCSS
+{
+	border-right: 30px solid #2bfcb7;
+}
+.collegeBoardCSS:hover
+{
+	background-color: #9effdf;
+}
