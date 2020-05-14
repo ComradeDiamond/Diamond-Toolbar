@@ -1,0 +1,22 @@
+{
+  "name": "diamond-toolbar",
+  "version": "1.0.0",
+  "description": "A chrome extension that helps with tech links by displaying them and clicking on them, and also makes your work on tech websites easier3",
+  "main": "manifest.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ComradeDiamond/Diamond-Toolbar.git"
+  },
+  "author": "Justin",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ComradeDiamond/Diamond-Toolbar/issues"
+  },
+  "homepage": "https://github.com/ComradeDiamond/Diamond-Toolbar#readme",
+  "dependencies": {
+  	"jquery": "^3.5.1"
+  }
+}
