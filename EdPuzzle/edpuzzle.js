@@ -23,7 +23,15 @@ function decodeHTML(toBeParsed) { //Converts foreign language HTML entities to r
 }
 function deHTMLify(toBeParsed) { //Convert something from HTML to not HTML
 	var trash = decodeHTML(toBeParsed);
-	return trash.replace(/<p>|<\/p>/gmiu, "");
+	trash = trash.replace(/<p>|<\/p>/gmiu, "");
+
+	let boolean = (/<sub>|<\/sub>/gmiu.test(trash));
+
+	if (boolean)
+	{
+		trash = trash.replace(/<sub>|<\/sub>/gmiu, "");
+	} 
+	return trash;
 }
 function findAnswer() {//Does the answer finding
 	answerFound = false;
@@ -47,9 +55,9 @@ function findAnswer() {//Does the answer finding
 			{
 				if (questionArray[i].type == "open-ended") //If it is open ended, it shows teacher comments in hopes it has something
 				{
-					if (questionArray[i].feedback[0].text != "")
+					if (questionArray[i].feedback[0].html != "")
 					{
-						display(decodeHTML(questionArray[i].feedback[0].text));
+						display(decodeHTML(questionArray[i].feedback[0].html));
 					}
 					else
 					{
