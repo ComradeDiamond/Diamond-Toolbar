@@ -23,33 +23,41 @@ function decodeHTML(toBeParsed) { //Converts foreign language HTML entities to r
 }
 function deHTMLify(toBeParsed) { //Convert something from HTML to not HTML
 	var trash = decodeHTML(toBeParsed);
+
 	trash = trash.replace(/<p>|<\/p>/gmiu, "");
-
-	let boolean = (/<sub>|<\/sub>/gmiu.test(trash));
-
-	if (boolean)
-	{
-		trash = trash.replace(/<sub>|<\/sub>/gmiu, "");
-	} 
+	//For chemistry
+	trash = trash.replace(/<sub>|<\/sub>/gmiu, "");
+	trash = trash.replace(/<sup>|<\/sup>/gmiu, "");
+	
 	return trash;
 }
 function findAnswer() {//Does the answer finding
 	answerFound = false;
+
+	try //If the question display is not available, immediately end the search
+	{
+		let target = document.querySelector('section[aria-label="Interaction statement"]').children[0].children;
+		
+		let temp = "";
+
+		//Loops to catch all the teachers that can't use technology
+		for (var i=0; i<target.length; i++) {
+			temp += target[i].innerHTML;
+		}
+		questionHTML = deHTMLify(temp);
+	}
+	catch(err)
+	{
+		display("There is no question");
+		return;
+	}
+
 	let json = $.getJSON(`https://edpuzzle.com/api/v3/assignments/${link}`, function(data){ //async the server for the API (thank god that exists)
 		let questionArray = data.medias[0].questions;
 
 		for (i in questionArray) { //Parses through all the questions that exist
 
 			questionAPI = deHTMLify(questionArray[i].body[0].html);
-			
-			try //If the question display is not available, immediately end the search
-			{
-				questionHTML = deHTMLify(document.querySelector('section[aria-label="Interaction statement"]').children[0].children[0].innerHTML);
-			}
-			catch(err)
-			{
-				break;
-			}
 
 			if (questionAPI == questionHTML) //If the question names match, then it starts looking for answers
 			{
@@ -83,14 +91,15 @@ function findAnswer() {//Does the answer finding
 		}
 		if (!answerFound) //Is the answer is not found, this alerts the player so
 		{
-			display("There's no question");
+			display("The question doesn't seem to exist");
 		}
 	});
 }
 function display(text) { 
-//Shows the user the results in the frontend. As of now we're alerting, but that will probably change soon for smth nicer
+//Shows the user the results in the frontend. As of now we're alerting, but that will probably change soon for smth nicer. That's why this exists here
 	alert(text);
 }
+
 function CreateButton() { //Creates a button that reveals edPuzzle answers
 	let temp = document.createElement("button");
 	temp.innerHTML = "Show multiple choice answer";
