@@ -7,7 +7,7 @@ The utility bar will have resources that help quality of life when on specific w
 # Installation
 1) The easy way
 - Download the .crx file, and open it with google chrome.
-- Google drive link: https://drive.google.com/open?id=1R5x-nuqVG2gn3CKFHmakT7BqW_9LOlwM
+- Google drive link: https://drive.google.com/file/d/1Y-kyGDG9C8WNSa7QinLBbCfWf2IbUJxB/view?usp=sharing
 2) The hard way 
 - Download the entire zip file
 - `npm install jquery`
