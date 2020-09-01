@@ -3,7 +3,8 @@ A quality of life chrome plugin that loads up useful website links for common ho
 Suggestion bucket: https://docs.google.com/forms/d/e/1FAIpQLScXSJVjoTQg-9_0z63DQ59PltnQxr_dC2qkuxR0RwiF2LA8Ew/viewform
 # How it works
 When an academic website is loaded (specifically, a BTHS one), a customized utility bar pops up
-The utility bar will have resources that help quality of life when on specific website
+The utility bar will have resources that help quality of life when on specific website <br />
+Some websites have built in cheat engines
 # Installation
 1) The easy way
 - Download the .crx file, and open it with google chrome.
