@@ -1,5 +1,3 @@
-/*I was supposed to use jquery and save tons of lines right here...
-but it decided to be a brainlet and turn the console into Staten Island landfill */
 
 function initialize() { //Gets the API link of the page
 	var templink = window.location.href.split(`https://edpuzzle.com/assignments/`);
@@ -11,10 +9,11 @@ function initialize() { //Gets the API link of the page
 	}
 	catch(err)
 	{
-		console.log("Crisis averted! Now gimme a cookie!");
+		console.log("Link != Target");
 	}
-
 }
+
+//----------------These are more for the backend API than for frontend users---------------------------//
 function decodeHTML(toBeParsed) { //Converts foreign language HTML entities to readable english
 	var useless = document.createElement("textarea");
 	useless.innerHTML = toBeParsed;
@@ -30,6 +29,12 @@ function deHTMLify(toBeParsed) { //Convert something from HTML to not HTML
 	trash = trash.replace(/<sup>|<\/sup>/gmiu, "");
 	
 	return trash;
+}
+//---------------------end---------------------------
+
+function display(text) { 
+//Shows the user the results in the frontend. As of now we're alerting, but that will probably change soon for smth nicer. That's why this exists here
+	alert(text);
 }
 function findAnswer() {//Does the answer finding
 	answerFound = false;
@@ -52,52 +57,58 @@ function findAnswer() {//Does the answer finding
 		return;
 	}
 
-	let json = $.getJSON(`https://edpuzzle.com/api/v3/assignments/${link}`, function(data){ //async the server for the API (thank god that exists)
-		let questionArray = data.medias[0].questions;
+	let jsonReq = new XMLHttpRequest();
+	jsonReq.open("GET", `https://edpuzzle.com/api/v3/assignments/${link}`, true);
+	jsonReq.setRequestHeader("x-edpuzzle-web-version", "7.23.30");
+  	jsonReq.setRequestHeader("x-edpuzzle-referrer", document.location.href)
+	jsonReq.onreadystatechange = function() {
+		if (jsonReq.readyState == 4)
+		{
+			let data = JSON.parse(jsonReq.response);
 
-		for (i in questionArray) { //Parses through all the questions that exist
+			let questionArray = data.medias[0].questions;
 
-			questionAPI = deHTMLify(questionArray[i].body[0].html);
+			for (i in questionArray) { //Parses through all the questions that exist
 
-			if (questionAPI == questionHTML) //If the question names match, then it starts looking for answers
-			{
-				if (questionArray[i].type == "open-ended") //If it is open ended, it shows teacher comments in hopes it has something
+				questionAPI = deHTMLify(questionArray[i].body[0].html);
+
+				if (questionAPI == questionHTML) //If the question names match, then it starts looking for answers
 				{
-					if (questionArray[i].feedback[0].html != "")
+					if (questionArray[i].type == "open-ended") //If it is open ended, it shows teacher comments in hopes it has something
 					{
-						display(decodeHTML(questionArray[i].feedback[0].html));
-					}
-					else
-					{
-						display("Your teacher has not given any feedback. Wowowow how lazy is that");
-					}
-					answerFound = true;
-					break;
-				}
-				else //If not, the server parses through every response to make sure it is true
-				{
-					let choiceArray = questionArray[i].choices;
-
-					for (j in choiceArray) {
-						if (choiceArray[j].isCorrect == true)
+						if (questionArray[i].feedback[0].html != "")
 						{
-							let answer = deHTMLify(choiceArray[j].body[0].html);
-							display(`The correct answer is "${answer}"`);
-							answerFound = true;
+							display(decodeHTML(questionArray[i].feedback[0].html));
+						}
+						else
+						{
+							display("Your teacher has not given any feedback. Wowowow how lazy is that");
+						}
+						answerFound = true;
+						break; //Stops looping to save time
+					}
+					else //If not, the server parses through every response to make sure it is true
+					{
+						let choiceArray = questionArray[i].choices;
+
+						for (j in choiceArray) {
+							if (choiceArray[j].isCorrect == true)
+							{
+								let answer = deHTMLify(choiceArray[j].body[0].html);
+								display(`The correct answer is "${answer}"`);
+								answerFound = true;
+							}
 						}
 					}
 				}
 			}
+			if (!answerFound) //Is the answer is not found, this alerts the player so
+			{
+				display("The question doesn't seem to exist");
+			}
 		}
-		if (!answerFound) //Is the answer is not found, this alerts the player so
-		{
-			display("The question doesn't seem to exist");
-		}
-	});
-}
-function display(text) { 
-//Shows the user the results in the frontend. As of now we're alerting, but that will probably change soon for smth nicer. That's why this exists here
-	alert(text);
+	}
+	jsonReq.send();	
 }
 
 function CreateButton() { //Creates a button that reveals edPuzzle answers

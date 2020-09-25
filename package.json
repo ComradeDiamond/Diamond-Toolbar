@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/ComradeDiamond/Diamond-Toolbar/issues"
   },
-  "homepage": "https://github.com/ComradeDiamond/Diamond-Toolbar#readme",
-  "dependencies": {
-  	"jquery": "^3.5.1"
-  }
+  "homepage": "https://github.com/ComradeDiamond/Diamond-Toolbar#readme"
 }

@@ -1,4 +1,3 @@
-/*Dependency: JQuery*/
 {
   "name": "Diamond Toolbar",
   "version": "1.0",
@@ -27,7 +26,7 @@
     },
     {
     	"matches": ["*://edpuzzle.com/*"],
-    	"js": ["jquery/dist/jquery.js", "EdPuzzle/edpuzzle.js"],
+    	"js": ["EdPuzzle/edpuzzle.js"],
     	"css": ["EdPuzzle/edpuzzle.css"]
     }
   ]
