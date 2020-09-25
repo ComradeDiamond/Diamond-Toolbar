@@ -11,6 +11,5 @@ Some websites have built in cheat engines
 - Google drive link: https://drive.google.com/file/d/1Y-kyGDG9C8WNSa7QinLBbCfWf2IbUJxB/view?usp=sharing
 2) The hard way 
 - Download the entire zip file
-- `npm install jquery`
 - Download the zip file, and extract it. If it goes well, you should end up with a folder. 
 - Take that folder and: Chrome > Upper right hand > More Tools > Extensions > Unpack File > Click on Folder
