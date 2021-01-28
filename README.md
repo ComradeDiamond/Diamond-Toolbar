@@ -2,9 +2,9 @@
 A quality of life chrome plugin that loads up useful website links for common homework websites<br />
 Suggestion bucket: https://docs.google.com/forms/d/e/1FAIpQLScXSJVjoTQg-9_0z63DQ59PltnQxr_dC2qkuxR0RwiF2LA8Ew/viewform
 # How it works
-When an academic website is loaded (specifically, a BTHS one), a customized utility bar pops up
-The utility bar will have resources that help quality of life when on specific website <br />
-Some websites have built in cheat engines
+Click on the diamond derp extension "logo", and it'll display a list of sites. <br />
+Navigate through them and click which one you want to access. <br />
+Click on external commands to use them if conditions are met
 # Installation
 1) The easy way
 - To be added...
