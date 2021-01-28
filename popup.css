@@ -1,0 +1,88 @@
+body
+{
+	width: 450px;
+	height: 570px;
+	overflow-x: hidden;
+}
+#introDiv
+{
+	background-color: white;
+	font: 16pt trebuchet ms;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-bottom: 1px solid grey;
+}
+#introDiv div
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#introDiv div img
+{
+	width: 50px;
+	height: 50px;
+	padding-right: 12px;
+}
+.tableDiv
+{
+	padding: 5%;
+	border-bottom: 1px solid grey;
+}
+.subDiv
+{
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
+.layContent
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 33%;
+	padding-bottom: 7%;
+	border-radius: 8px;
+}
+.layContent img
+{
+	width: 50%;
+	height: auto;
+}
+.layContent div
+{
+	font: 12pt trebuchet ms;
+}
+#exIntro
+{
+	font: 16pt trebuchet ms;
+	padding-left: 5%;
+	padding-top: 3%;
+}
+#exIntro + div
+{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 5%;
+}
+.exBox div/*lmao x-box*/
+{
+	padding-left: 5%;
+	width: 75%;
+}
+.cover
+{
+	font: 14pt trebuchet ms;
+}
+.description
+{
+	font: 12pt trebuchet ms;
+}
+.exImg
+{
+	width: 25%;
+	height: auto;
+}

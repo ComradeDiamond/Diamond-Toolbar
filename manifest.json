@@ -3,31 +3,18 @@
   "version": "1.0",
   "description": "A bunch of tools",
   "manifest_version": 2,
-  "content_scripts": [
-  	{
-  		"matches": ["https://www.deltamath.com/*"],
-  		"js": ["Deltamath/deltamath.js"],
-  		"css": ["Deltamath/deltamath.css"]
-  	},
-    {
-      "matches": ["*://cl.castlelearning.com/*"],
-      "js": ["Castle Learning/CastleLearning.js"],
-      "css": ["Castle Learning/CastleLearning.css"]
-    },
-    {
-    	"matches": ["*://classroom.google.com/*"],
-    	"js": ["Google Classroom/Classroom.js"],
-    	"css": ["Google Classroom/Classroom.css"]
-    },
-    {
-      "matches": ["*://quizlet.com/*"],
-      "js": ["Quizlet/quizlet.js"],
-      "css": ["Quizlet/quizlet.css"]
-    },
-    {
-    	"matches": ["*://edpuzzle.com/*"],
-    	"js": ["EdPuzzle/edpuzzle.js"],
-    	"css": ["EdPuzzle/edpuzzle.css"]
-    }
+  "browser_action": {
+  	"default_title": "Diamond Toolbar",
+    "default_popup": "popup.html",
+    "default_icon": "ComradeDiamond.png"
+  },
+  "background": {
+    "scripts":["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus"
   ]
 }
