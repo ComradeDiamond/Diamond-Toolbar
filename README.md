@@ -7,8 +7,7 @@ The utility bar will have resources that help quality of life when on specific w
 Some websites have built in cheat engines
 # Installation
 1) The easy way
-- Download the .crx file, and open it with google chrome.
-- Google drive link: https://drive.google.com/file/d/1Y-kyGDG9C8WNSa7QinLBbCfWf2IbUJxB/view?usp=sharing
+- <To be added>
 2) The hard way 
 - Download the entire zip file
 - Download the zip file, and extract it. If it goes well, you should end up with a folder. 
