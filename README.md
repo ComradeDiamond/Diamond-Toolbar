@@ -7,7 +7,7 @@ The utility bar will have resources that help quality of life when on specific w
 Some websites have built in cheat engines
 # Installation
 1) The easy way
-- <To be added>
+- To be added...
 2) The hard way 
 - Download the entire zip file
 - Download the zip file, and extract it. If it goes well, you should end up with a folder. 
